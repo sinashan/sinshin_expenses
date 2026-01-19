@@ -277,7 +277,7 @@ st.sidebar.caption(f"Last loaded: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
 st.sidebar.markdown("---")
 
 # Title and header
-st.title("💑 Noushin & Sina Expense Dashboard")
+st.title("� Noushin & Sina Expense Dashboard")
 st.markdown("---")
 
 # Sidebar filters
