@@ -365,6 +365,15 @@ st.markdown(f"**📝 {len(filtered_df)} transactions** in selected period")
 
 st.markdown("---")
 
+# Recent Expenses Section
+st.header("🕐 Recent Expenses")
+recent_expenses = filtered_df.nlargest(10, 'Date')[['Date', 'Description', 'Category', 'Cost', 'Paid By']].copy()
+recent_expenses['Date'] = recent_expenses['Date'].dt.strftime('%Y-%m-%d')
+recent_expenses['Cost'] = recent_expenses['Cost'].apply(lambda x: f"${x:,.2f}")
+st.dataframe(recent_expenses, use_container_width=True, hide_index=True)
+
+st.markdown("---")
+
 # Charts Row 1
 col1, col2 = st.columns(2)
 
